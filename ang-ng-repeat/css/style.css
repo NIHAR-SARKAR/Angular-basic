@@ -1,0 +1,17 @@
+#test-area{
+	width:900px;
+	padding:20px 50px;
+	margin: auto;
+	background-color: #bbb;
+	min-height:500px;
+	font-size: 16px;
+}
+.red{
+    color:red;
+}
+.green{
+    color: green;
+}
+.mid{
+    font-size: 18px;
+}
