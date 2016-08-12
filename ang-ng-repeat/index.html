@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Myapp">
+    <head>
+<title>angular project</title>
+
+		<script src="js/angular.min.js"></script>
+		
+		<link href="css/style.css" rel="stylesheet"/>
+
+    </head>
+    <body >
+    <div id="test-area" ng-controller="mycontroller" >
+       <table border="1px">
+           <thead>
+            <td>Name</td>  <td>Id</td>  <td>Address</td>  <td>Number</td> 
+           </thead>
+        <tr ng-repeat="user in users" ng-init="parent=$index">
+        <td>{{user.name}}</td>   
+        <td> {{user.id}} // Index {{$index}}</td> 
+        <td>{{user.address}}</td> 
+            <td>
+            <ul>
+            <li ng-repeat="marks in user.marks">
+            {{marks.it}} // Index {{parent}}.{{$index}}  //
+            </li>
+            </ul>
+            </td>
+        </tr>
+        </table>
+        
+        <input type="text" ng-model="user.Help"/><br/>
+    	<span class="green mid">{{user.Help}}</span><br/>
+    </div>
+        
+    
+   <script src="js/script.js">
+   
+   </script>
+	</body>
+</html>
