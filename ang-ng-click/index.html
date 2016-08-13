@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Myapp">
+    <head>
+<title>angular project</title>
+
+		<script src="js/angular.min.js"></script>
+		
+		<link href="css/style.css" rel="stylesheet"/>
+
+    </head>
+    <body >
+        <center><h2 class="red">Button click Example</h2></center>
+    <div id="test-area" ng-controller="mycontroller" >
+       <table class="tab1">
+           <thead>
+            <td>Name</td>  <td>Id</td>  <td>Address</td>  <td>Number</td> 
+               <td>Test</td>
+           </thead>
+        <tr ng-repeat="user in users" ng-init="parent=user">
+        <td>{{user.name}}</td>   
+        <td> {{user.id}} // </td> 
+        <td>{{user.address}}</td> 
+            <td>
+            <ul>
+            <li ng-repeat="marks in user.marks">
+            {{marks.it}} 
+                <button draggable="false" ng-click="increment(marks)">add++</button>
+                <br/>
+                
+            </li>
+            </ul>
+            </td>
+            <td>
+            <button draggable="false" ng-click="(parent.name=='Nihar')?parent.name='Sality':parent.name= parent.bs||'Unknown'">change</button><br/>
+            <button draggable="false" ng-click="change(parent)">get</button>
+            </td>
+        </tr>
+        </table>
+           <br/><br/>
+        <input type="text" ng-model="user.Help"/><br/>
+     <span class="mid" >{{user.Help}}</span><br/>
+        <span class="green mid" ng-bind="user.Help"></span><br/>
+        <span class="red mid ng-bind:user.Help" ></span>
+        
+        
+    </div>
+        
+    
+   <script src="js/script.js">
+   
+   </script>
+	</body>
+</html>
