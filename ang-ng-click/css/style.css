@@ -1,0 +1,38 @@
+#test-area{
+	width:900px;
+	padding:20px 50px;
+	margin: auto;
+	min-height:500px;
+	font-size: 16px;
+    font-family: "courier new";
+}
+.red{
+    color:red;
+}
+.green{
+    color: green;
+}
+.mid{
+    font-size: 18px;
+}
+table.tab1{
+    border-collapse: collapse;
+    border:1px solid #555; 
+}
+.tab1 tr td{
+    border:1px solid #888;
+    padding:0px 10px;
+    margin:0px;
+}
+.tab1 thead{
+    color: #fff;
+    background-color: #339977;
+   
+}
+.tab1 thead td{
+    border-color: #227799;
+     padding:5px 10px;
+}
+.tab1 tr:nth-child(even){
+    background-color: #f0f0f0;
+}
