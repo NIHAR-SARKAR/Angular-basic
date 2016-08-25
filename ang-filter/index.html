@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Myapp">
+    <head>
+<title>angular project</title>
+
+		<script src="js/angular.min.js"></script>
+		
+		<link href="css/style.css" rel="stylesheet"/>
+
+    </head>
+    <body >
+        <center><h2 class="red">Angular Filter</h2></center>
+    <div id="test-area" ng-controller="mycontroller" ng-init="ct=0" >
+        <input type="number" step="1" max="5" min="1" ng-model="count" style="width:50px;"/>
+        
+        <input type="number" step="1" max="4" min="0" ng-model="indexFrom" style="width:50px;"/>
+       <table class="tab1">
+           <thead>
+            <th>Name</th>  <th>Id</th>  <th>Address</th>  <th>Number</th> 
+               <th>Date</th>
+           </thead>
+        <tr ng-repeat="user in users | limitTo:count:indexFrom " ng-init="parent=user;$parent.ct=$index">
+        <td>{{user.name | uppercase}}</td>   
+        <td> {{user.id | number }}</td> 
+        <td>{{user.address |lowercase}}</td> 
+            <td ng-bind="parent.marks[0].it |currency:'$'">
+            </td>
+            <td class="ng-bind:user.bs | date:'dd/MM/yyyy'">
+            
+            </td>
+        </tr>
+        </table>
+           <br/>
+        <span class="gray">Total Row Number : {{ct}} | From {{indexFrom}} to {{indexFrom+count}} </span>
+        <br/>
+        
+        
+        
+    </div>
+        
+    
+   <script src="js/script.js">
+   
+   </script>
+	</body>
+</html>
